@@ -1,0 +1,6 @@
+@CPO.CMSAPI_HostAddress = http://localhost:5068
+
+GET {{CPO.CMSAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

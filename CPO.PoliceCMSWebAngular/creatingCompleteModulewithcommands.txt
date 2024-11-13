@@ -1,0 +1,3 @@
+1. ng generate module features/auth --routing (auth,province,region basically the folder or module name) for creating module and routing files
+2. ng generate component features/auth/components/sign-in (for creating components files)
+3. ng generate service features/auth/services/auth (for creating services of related module file)
