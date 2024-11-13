@@ -1,0 +1,2 @@
+# AngularReactDotnet8
+templates
