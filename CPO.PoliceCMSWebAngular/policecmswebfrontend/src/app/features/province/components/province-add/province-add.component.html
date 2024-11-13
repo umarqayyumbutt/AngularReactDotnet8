@@ -1,0 +1,7 @@
+<h2>Add Province</h2>
+<form [formGroup]="addProvinceForm" (ngSubmit)="onSubmit()">
+  <label for="provincename">Province Name</label>
+  <input id="provincename" formControlName="provincename" />
+
+  <button type="submit" [disabled]="addProvinceForm.invalid">Add Province</button>
+</form>

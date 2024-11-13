@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Edit Province</h2>
+  
+    <!-- Check if the form is ready and province data is loaded -->
+    <form [formGroup]="editProvinceForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Province Name Field -->
+      <div class="form-group">
+        <label for="provinceName">Province Name:</label>
+        <input
+          type="text"
+          id="provincename"
+          formControlName="provinceName"
+          class="form-control"
+          placeholder="Enter province name"
+          [ngClass]="{'is-invalid': editProvinceForm.get('provincename')?.invalid && editProvinceForm.get('provincename')?.touched}"
+        />
+        <!-- Error message for validation -->
+        <div *ngIf="editProvinceForm.get('provincename')?.invalid && editProvinceForm.get('provincename')?.touched" class="text-danger">
+          Province name is required.
+        </div>
+      </div>
+  
+      <!-- Created By Field (if needed, you can make this field optional or remove it) -->
+      <div class="form-group">
+        <label for="createdBy">Created By (optional):</label>
+        <input
+          type="number"
+          id="createdby"
+          formControlName="createdby"
+          class="form-control"
+          placeholder="Enter creator ID"
+        />
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="editProvinceForm.invalid">
+          Update Province
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+      
+    </form>
+  </div>
+  

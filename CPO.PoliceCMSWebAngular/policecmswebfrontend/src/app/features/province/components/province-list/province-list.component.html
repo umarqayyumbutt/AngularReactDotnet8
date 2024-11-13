@@ -1,0 +1,40 @@
+<!-- src/app/features/provinces/components/list/provinces-list.component.html -->
+
+<div *ngIf="loading">Loading provinces...</div>
+
+<div *ngIf="!loading && province.length > 0">
+  <h2>Provinces List</h2>
+  <!-- <button routerLink="/province/add">Add Province</button> -->
+  <button (click)="addProvince()">Add Province</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Province Name</th>
+        <th>Created By</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prov of province">
+        <td>{{ prov.id }}</td>
+        <td>{{ prov.provincename }}</td>
+        <td>{{ prov.createdby }}</td>
+        <td>
+          <!-- Edit Button -->
+          <button (click)="editProvince(prov.id)">Edit</button>
+          
+          <!-- View Button -->
+          <button (click)="viewProvince(prov.id)">View</button>
+          
+          <!-- Delete Button -->
+          <button (click)="deleteProvince(prov.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && province.length === 0">
+  <p>No provinces found.</p>
+</div>
